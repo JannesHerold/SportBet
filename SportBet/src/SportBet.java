@@ -6,6 +6,7 @@ public class SportBet {
 
 		
 		int Donger4Life = 69;
+		float Rolf = 0.9;
 				}
 
 }
