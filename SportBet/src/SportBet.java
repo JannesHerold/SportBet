@@ -8,6 +8,7 @@ public class SportBet {
 		int Donger4Life = 69;
 		float Rolf = 0.9;
 		double JannesPenis=0.000005;
+		YEA BOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII;
 				}
 
 }
