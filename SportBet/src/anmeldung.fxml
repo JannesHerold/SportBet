@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="anmeldungController">
+   <children>
+      <TextField fx:id="anmelden_eingabe" layoutX="123.0" layoutY="220.0" prefHeight="36.0" prefWidth="208.0" text="zb. Mustermann" />
+      <TextField fx:id="passwort_eingabe" layoutX="123.0" layoutY="285.0" prefHeight="36.0" prefWidth="208.0" text="********" />
+      <Label layoutX="60.0" layoutY="39.0" prefHeight="111.0" prefWidth="684.0" text="     SportBet" textAlignment="JUSTIFY">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Label layoutX="402.0" layoutY="226.0" prefHeight="25.0" prefWidth="149.0" text="Anmelden">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="402.0" layoutY="291.0" prefHeight="25.0" prefWidth="149.0" text="Passwort">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="123.0" layoutY="468.0" mnemonicParsing="false" onAction="#anmelde_button" prefHeight="36.0" prefWidth="208.0" text="Anmelden" />
+      <Button layoutX="447.0" layoutY="468.0" mnemonicParsing="false" onAction="#regestrieren_button" prefHeight="36.0" prefWidth="208.0" text="Regestrieren" />
+   </children>
+   <effect>
+      <Glow />
+   </effect>
+</Pane>
