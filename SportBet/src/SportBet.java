@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class SportBet {
 	public static int doppelteZahlNr;
@@ -8,26 +9,13 @@ public class SportBet {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int[] arr1 = new int[18];
+		int arr1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
 
-		int x = 0;
-		for (int i = 0; i < 18; i++) {
-
-			double zufallsZahl = Math.random() * 18 + 1;
-			int zahl = (int) zufallsZahl;
-			arr1[x] = zahl;
-			x++;
+		shuffleArray(arr1);
+		for (int i = 0; i < arr1.length; i++) {
+			System.out.print(arr1[i] + " ");
 		}
-		while (aufDoppeltePruefen(arr1) == true) {
-			doppelteZahlErsetzen(arr1);
-		}
-
-		
-
-		for (int t : arr1) {
-			System.out.print(t + " ");
-		}
-
+		System.out.println();
 	}
 
 	static int Spiel1(int arr1[]) {
@@ -93,23 +81,16 @@ public class SportBet {
 		return 0;
 	}
 
-	public static boolean aufDoppeltePruefen(int[] arr1) {
-
-		boolean doppelteVorhanden = false;
-
-		for (int i = 1; i < arr1.length; i++) {
-			if (arr1[i] == arr1[i - 1]) {
-				doppelteVorhanden = true;
-				doppelteZahlNr = i;
-				//Arrays.sort(arr1);
-			}
+	static void shuffleArray(int[] ar) {
+		// If running on Java 6 or older, use `new Random()` on RHS here
+		Random rnd = ThreadLocalRandom.current();
+		for (int i = ar.length - 1; i > 0; i--) {
+			int index = rnd.nextInt(i + 1);
+			// Simple swap
+			int a = ar[index];
+			ar[index] = ar[i];
+			ar[i] = a;
 		}
-		return doppelteVorhanden;
-	}
-
-	public static void doppelteZahlErsetzen(int[] array) {
-		Random zufallszahl = new Random();
-		array[doppelteZahlNr] = zufallszahl.nextInt(18) + 1;
 	}
 
 }
