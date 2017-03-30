@@ -1,36 +1,11 @@
-import java.awt.event.ActionEvent;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
 
 public class MyController {
 
     @FXML
-    private TextField eingabeEinsatzReihe1;
-
-    @FXML
-    private TextField eingabeEinsatzReihe4;
-
-    @FXML
-    private TextField eingabeEinsatzReihe5;
-
-    @FXML
-    private TextField eingabeEinsatzReihe6;
-
-    @FXML
-    private TextField eingabeEinsatzReihe7;
-
-    @FXML
-    private TextField eingabeEinsatzReihe8;
-
-    @FXML
-    private TextField eingabeEinsatzReihe3;
-
-    @FXML
-    private TextField eingabeEinsatzReihe2;
-
-    @FXML
     void bundesliga_1(ActionEvent event) {
+    	System.out.println("TEST");
 
     }
 
@@ -46,7 +21,7 @@ public class MyController {
 
     @FXML
     void reihe1team2(ActionEvent event) {
-
+    
     }
 
     @FXML
@@ -116,6 +91,16 @@ public class MyController {
 
     @FXML
     void reihe8team2(ActionEvent event) {
+
+    }
+
+    @FXML
+    void reihe9team1(ActionEvent event) {
+
+    }
+
+    @FXML
+    void reihe9team2(ActionEvent event) {
 
     }
 

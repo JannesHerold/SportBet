@@ -25,6 +25,7 @@ public class anmeldungController {
 		stage.setScene(new Scene(mainPane));
 		
 		
+		
 		stage.show(); 
 		
 		stage.setResizable(false);			//feste fenstergröße (fenster kann nicht mehr mit der maus größer oder kleiner gezogen werden)
