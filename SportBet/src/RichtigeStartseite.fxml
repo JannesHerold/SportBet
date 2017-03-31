@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="lol" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="923.0" prefWidth="1298.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="923.0" prefWidth="1298.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController">
    <children>
       <Label layoutX="32.0" layoutY="29.0" prefHeight="77.0" prefWidth="1246.0" text="                SportBet">
          <font>
@@ -55,14 +55,14 @@
       <Button layoutX="993.0" layoutY="683.0" mnemonicParsing="false" onAction="#reihe7team2" prefHeight="25.0" prefWidth="93.0" text="Team 1." />
       <Button layoutX="993.0" layoutY="744.0" mnemonicParsing="false" onAction="#reihe8team2" prefHeight="25.0" prefWidth="93.0" text="Team 1." />
       <Button layoutX="993.0" layoutY="237.0" mnemonicParsing="false" onAction="#reihe1team2" prefHeight="25.0" prefWidth="93.0" text="Team 1." />
-      <TextField layoutX="1125.0" layoutY="237.0" text="Einsatz Eingeben" />
-      <TextField layoutX="1125.0" layoutY="471.0" text="Einsatz Eingeben" />
-      <TextField layoutX="1125.0" layoutY="547.0" text="Einsatz Eingeben" />
-      <TextField layoutX="1125.0" layoutY="616.0" text="Einsatz Eingeben" />
-      <TextField layoutX="1125.0" layoutY="683.0" text="Einsatz Eingeben" />
-      <TextField layoutX="1125.0" layoutY="744.0" text="Einsatz Eingeben" />
-      <TextField layoutX="1125.0" layoutY="392.0" text="Einsatz Eingeben" />
-      <TextField layoutX="1125.0" layoutY="309.0" text="Einsatz Eingeben" />
+      <TextField fx:id="einsatz1" layoutX="1125.0" layoutY="237.0" promptText="Einsatz" />
+      <TextField fx:id="einsatz4" layoutX="1125.0" layoutY="471.0" promptText="Einsatz" />
+      <TextField fx:id="einsatz5" layoutX="1125.0" layoutY="547.0" promptText="Einsatz" />
+      <TextField fx:id="einsatz6" layoutX="1125.0" layoutY="616.0" promptText="Einsatz" />
+      <TextField fx:id="einsatz7" layoutX="1125.0" layoutY="683.0" promptText="Einsatz" />
+      <TextField fx:id="einsatz8" layoutX="1125.0" layoutY="744.0" promptText="Einsatz" />
+      <TextField fx:id="einsatz3" layoutX="1125.0" layoutY="392.0" promptText="Einsatz" />
+      <TextField fx:id="einsatz2" layoutX="1125.0" layoutY="309.0" promptText="Einsatz" />
       <Label layoutX="40.0" layoutY="531.0" prefHeight="50.0" prefWidth="246.0" text="Scoreboard">
          <font>
             <Font size="44.0" />
@@ -73,6 +73,6 @@
       <Label layoutX="289.0" layoutY="786.0" prefHeight="43.0" prefWidth="220.0" text="                             HSV" />
       <Label layoutX="591.0" layoutY="786.0" prefHeight="43.0" prefWidth="220.0" text="                   Werder Bremen" />
       <Label layoutX="435.0" layoutY="786.0" prefHeight="43.0" prefWidth="220.0" text="                               vs" />
-      <TextField layoutX="1125.0" layoutY="795.0" text="Einsatz Eingeben" />
+      <TextField fx:id="einsatz9" layoutX="1125.0" layoutY="795.0" promptText="Einsatz" />
    </children>
 </Pane>
