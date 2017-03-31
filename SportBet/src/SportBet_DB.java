@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 // MySQL-Bibliothek für Strings mit SQL-Befehlen
 //-MySQL Library for Strings with SQL commands
 import java.sql.PreparedStatement;
-// MySql-Bibliothek, um alle Informationen aus einer Tabelle auszugeben
+// MySql-Bibliothek, um alle Informationen aus einer Tabelle auszugebe
 //-MySql Library to give all information from a table
 import java.sql.ResultSet;
 // MySQL-Bibliothek, um die Tabelle als Array-Liste auszugeben
