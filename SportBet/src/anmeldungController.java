@@ -24,6 +24,9 @@ public class anmeldungController {
     	Stage stage = new Stage();
 		stage.setScene(new Scene(mainPane));
 		
+//		String name;
+		String name = anmelden_eingabe.getText();
+		System.out.println(name);
 		
 		
 		stage.show(); 
