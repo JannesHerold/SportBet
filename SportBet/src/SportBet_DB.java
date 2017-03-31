@@ -2,7 +2,7 @@
 //package SportBet;									
 
 // MySQL-Bibliothek für die Verbindung
-//-MySQL Library for connection Statements.
+//-MySQL Library for connection Statements
 import java.sql.Connection;												
 // MySQL-Bibliothek mit Treibern, um eine Verbindung zu einer MySQL-Datenbank zu erhalten 
 //-MySQL Library with drivers to get a connection to a MySQL Database
