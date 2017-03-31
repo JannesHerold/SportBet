@@ -1,3 +1,5 @@
+import java.awt.Label;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -7,8 +9,6 @@ import javafx.scene.layout.Pane;
 
 public class MyController {
 
-    @FXML
-    private Pane lol;
 
     @FXML
     void bundesliga_1(ActionEvent event) {
@@ -109,6 +109,7 @@ public class MyController {
     void reihe9team2(ActionEvent event) {
 
     }
+ 
 
     
     

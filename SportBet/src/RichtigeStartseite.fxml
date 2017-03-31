@@ -13,7 +13,7 @@
             <Font size="96.0" />
          </font>
       </Label>
-      <Label layoutX="289.0" layoutY="735.0" prefHeight="43.0" prefWidth="220.0" text="                             HSV" />
+      <Label layoutX="289.0" layoutY="735.0" prefHeight="43.0" prefWidth="220.0" text="setText(String lel)" />
       <Label layoutX="289.0" layoutY="228.0" prefHeight="43.0" prefWidth="220.0" text="                             HSV" />
       <Label layoutX="289.0" layoutY="674.0" prefHeight="43.0" prefWidth="220.0" text="                             HSV" />
       <Label layoutX="289.0" layoutY="607.0" prefHeight="43.0" prefWidth="220.0" text="                             HSV" />
