@@ -11,6 +11,7 @@ public class MyController {
 
     @FXML
     void bundesliga_2(ActionEvent event) {
+    	System.out.println("TEST");
 
     }
 

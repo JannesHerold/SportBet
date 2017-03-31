@@ -4,20 +4,24 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SportBet {
+	public static boolean spielErgebniss1;
+	public static boolean spielErgebniss2;
+	public static boolean spielErgebniss3;
+	public static boolean spielErgebniss4;
+	public static boolean spielErgebniss5;
+	public static boolean spielErgebniss6;
+	public static boolean spielErgebniss7;
+	public static boolean spielErgebniss8;
+	public static boolean spielErgebniss9;
+	public static int arr1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int arr1[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
-		boolean spielErgebniss1;
-		boolean spielErgebniss2;
-		boolean spielErgebniss3;
-		boolean spielErgebniss4;
-		boolean spielErgebniss5;
-		boolean spielErgebniss6;
-		boolean spielErgebniss7;
-		boolean spielErgebniss8;
-		boolean spielErgebniss9;
+		
+		
 		shuffleArray(arr1);
 		for (int i = 0; i < arr1.length; i++) {
 			System.out.print(arr1[i] + " ");
