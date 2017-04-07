@@ -1,31 +1,51 @@
-// Standardpaketanwendung - default package application 
-//package SportBet;									
+/** SportBet Datenbank
+ * 
+ * Dieser Quellcode stellt eine Verbindung zu einer SQL-Datenbank her und 
+ * prüft ob eine Tabelle bereits vorhanden ist. Wenn dies nicht der Fall ist,
+ * wird eine Tabelle erstellt.
+ * 
+ * @version 1.2
+ * @author Ole Wehmhörner
+ * 
+ */
+
+
+
+/** Import der verschiedenen Bibliotheken
+ */
 
 // MySQL-Bibliothek für die Verbindung
-//-MySQL Library for connection Statements
 import java.sql.Connection;												
 // MySQL-Bibliothek mit Treibern, um eine Verbindung zu einer MySQL-Datenbank zu erhalten 
-//-MySQL Library with drivers to get a connection to a MySQL Database
 import java.sql.DriverManager;											
 // MySQL-Bibliothek für Strings mit SQL-Befehlen
-//-MySQL Library for Strings with SQL commands
 import java.sql.PreparedStatement;
 // MySql-Bibliothek, um alle Informationen aus einer Tabelle auszugeben
-//-MySql Library to give all information from a table
 import java.sql.ResultSet;
 // MySQL-Bibliothek, um die Tabelle als Array-Liste auszugeben
-//-MySQL Library to give out the Table as Array List
 import java.util.ArrayList;
 
 
 import java.util.*;
 
-// Start mit der Datenbankklasse, 4 Methoden 
-//-start with the Database class, 4 methods
+// Start mit der Datenbankklasse, 4 Methoden
 public class SportBet_DB {
 
-	// Methode um die Verbindung mit der MySQL-Datenbank mit dem Namen "SportBet" herzustellen
-	//-method that connect to the MySQL database called "SportBet"
+	
+	
+	/** 1 Methode - Verbindung mit der MySQL-Datenbank herstellen
+	 * 
+	 * Methode um die Verbindung mit der MySQL-Datenbank mit dem Namen "SportBet" herzustellen
+	 * 
+	 * Es wurde in allen 4 Methoden das Try-Catch Kommando benutzt, da dieses einen Codeabschnitt umschliesst und wird dafür verwendet mögliche Fehler (exceptions) 
+	 * innerhalb dieses Codeabschnittes abzufangen, sodass man darauf reagieren kann. 
+	 *
+	 * @param ... Beschriebung des 1. Paramters ...
+	 * @param ... Beschriebung des 2. Paramters ...
+	 * @return ... Beschriebung des Rückgabewertes ...
+ 	 */
+	
+	
 				public static Connection getConnection() throws Exception {
 
 					
@@ -62,19 +82,24 @@ public class SportBet_DB {
 				}
 
 				
-					//
+				
+				/** 2 Methode - Überprüfung und Erstellung einer Tabelle
+				 * 
+				 * Die Folgenden Einträge überprüfen, ob bereits eine Tabelle vorhanden ist.
+				 * Wenn dies nicht der Fall ist, wird eine neue Tabelle erstellt
+				 * 
+				 * @throws Exception
+				 */
+			
+			
+				
 				public static void createTable() throws Exception {
 						
 					
 					
 					
-					
-						// Die Folgenden Einträge überprüfen,
-						// ob bereits eine Tabelle vorhanden ist.
-						// Wenn dies nicht der Fall ist, wird eine neue Tabelle erstellt
-				
-				
-				try {
+					try {
+						// Mit "Connection con = getConnection()" gehen wir sicher,dass wir auch mit der Datenbank verbunden sind
 						Connection con = getConnection();
 						PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id))");
 						create.executeUpdate();
@@ -89,7 +114,13 @@ public class SportBet_DB {
 	
 				
 				
-				
+				/** 3 Methode - Weitergabe des Benutzernamens und des Passwortes an die Tabelle logindaten
+				 * 
+				 * 
+				 * 
+				 * 
+				 * @throws Exception
+				 */
 				
 				
 	public static Scanner eingabe;
@@ -105,21 +136,41 @@ public class SportBet_DB {
 	}
 
 
-			public static ArrayList<String> get() throws Exception {
+				/** 4 Methode - Methode, die die gespeicherten Informationen aus der Tabelle ausgibt
+				 * 
+				 * Diese Methode gibt die gespeicherten Informationen aus der Tabelle logindaten aus der Datenbank Sportbet aus
+				 * 
+				 * 
+				 * @throws Exception
+				 */
+	
+	
+	
+	
+	
+				public static ArrayList<String> get() throws Exception {
 				try {
+					// Mit "Connection con = getConnection()" gehen wir sicher,dass wir auch mit der Datenbank verbunden sind
 					Connection con = getConnection();
+					// Diese vorbereitete Anweisung, erlaubt es, MySQL-Befehle als String zu verwenden.
+					// hier wird eine Select-Anweisung verwendet, um den Benutzername und das Passwort aus der Tabelle logindaten zu erhalten
 					PreparedStatement statement = con.prepareStatement("SELECT username, password FROM logindaten");
-
+					// Ergebnisse werden ausgegeben, solange welche vorhanden sind
 					ResultSet result = statement.executeQuery();
-
+					// Ein neuer String Array wird für den usernamen und das password erstellt
 					ArrayList<String> array = new ArrayList<String>();
+					// Solange wir Ergebnisse haben, werden diese Ausgegeben
 					while (result.next()) {
+						// Gibt den username aus 
 						System.out.print(result.getString("username"));
+						// Lässt eine Lücke zwischen username und passwort
 						System.out.print(" ");
+						// Gibt das Passwort aus
 						System.out.println(result.getString("password"));
 
 						array.add(result.getString("password"));
 					}
+					// 
 					System.out.println("Alle Inhalte wurden wiedergegeben");
 					return array;
 
