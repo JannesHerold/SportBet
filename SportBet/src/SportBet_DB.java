@@ -83,6 +83,7 @@ public class SportBet_DB {
 
 				
 				
+				
 				/** 2 Methode - Überprüfung und Erstellung einer Tabelle
 				 * 
 				 * Die Folgenden Einträge überprüfen, ob bereits eine Tabelle vorhanden ist.
@@ -101,7 +102,7 @@ public class SportBet_DB {
 					try {
 						// Mit "Connection con = getConnection()" gehen wir sicher,dass wir auch mit der Datenbank verbunden sind
 						Connection con = getConnection();
-						PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id))");
+						PreparedStatement create = con.prepareStatement("CREATE TABLE IF NOT EXISTS logindaten(id int NOT NULL AUTO_INCREMENT, username varchar(255), password varchar(255), PRIMARY KEY (id), UNIQUE (username))");
 						create.executeUpdate();
 
 
@@ -170,7 +171,7 @@ public class SportBet_DB {
 
 						array.add(result.getString("password"));
 					}
-					// 
+					// Alle Inhalte der Tabelle werden ausgegeben
 					System.out.println("Alle Inhalte wurden wiedergegeben");
 					return array;
 
@@ -181,7 +182,20 @@ public class SportBet_DB {
 
 			}
 
-			public static void post() throws Exception{
+			
+
+				/** 5 Methode - method that gets the entered username and password from the "regis.Controller" class,
+				 *  to push them into the "logindaten" table
+				 * 
+				 * 
+				 * 
+				 * 
+				 * @throws Exception
+				 */
+				
+				
+				
+				public static void post() throws Exception{
 				eingabe = new Scanner (System.in);
 				System.out.print("Benutzername: ");
 				String var1 = eingabe.nextLine();
@@ -189,8 +203,10 @@ public class SportBet_DB {
 				String var2 = eingabe.nextLine();
 
 				try {
+					// Zeile nimmt die beiden String Daten var1 und var2 und speichert Sie
+					// sie verschlüsselt wegen des SHA1 in die Datenbank ab.
 					Connection con = getConnection();
-					PreparedStatement posted = con.prepareStatement("INSERT INTO logindaten (username, password) VALUES ('" + var1 + "', '" + var2 + "')");
+					PreparedStatement posted = con.prepareStatement("INSERT INTO logindaten (username, password) VALUES ('" + var1 + "',SHA1( '" + var2 + "'))");
 					posted.executeUpdate();
 				} catch (Exception e) {
 					System.out.println(e);
